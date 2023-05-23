@@ -10,15 +10,16 @@ def check():
         print("You choose head.")
     elif my_call == "tail":
         print("You choose tail.")
-    else:
-        print("Your call is invalid.")
 
 check()
-def toss():
-    if my_call == "head" and appears == "tail":
-        print("you lost the toss.")
-    else:
-        print("you won the toss.")
-        
 print(f"It appears {appears}")
+def toss():
+    if (my_call == "head" and appears == "tail") or (my_call == "tail" and appears == "head"):
+        print("opponent won the toss.")
+    elif (my_call == "tail" and appears == "tail") or (my_call == "head" and appears == "head"):
+        print("you won the toss.")
+    else:
+        
+        print(f"Your call {my_call} is invalid.\nTry again")
+        
 toss()
